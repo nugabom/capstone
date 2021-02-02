@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".customer_login">
+
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="111dp"
+        android:layout_height="27dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="244dp"
+        android:layout_marginBottom="387dp"
+        android:text="비밀번호찾기"
+        android:textSize="5dp" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="28dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="143dp"
+        android:layout_marginBottom="382dp"
+        android:text="아이디 찾기"
+        android:textSize="5dp" />
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="122dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/logo"
+        tools:layout_editor_absoluteY="55dp" />
+
+    <EditText
+        android:id="@+id/text_customer_id"
+        android:layout_width="223dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="48dp"
+        android:layout_marginBottom="517dp"
+        android:inputType="textCapCharacters"
+        android:hint="아이디"></EditText>
+
+    <EditText
+        android:id="@+id/text_customer_pw"
+        android:layout_width="224dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="315dp"
+        android:inputType="number"
+        android:hint="비밀번호"></EditText>
+
+    <Button
+        android:id="@+id/btn_login_button"
+        android:layout_width="wrap_content"
+        android:layout_height="122dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="246dp"
+        android:layout_marginEnd="17dp"
+        android:text="로그인" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="70dp"
+        android:layout_height="29dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="63dp"
+        android:layout_marginBottom="382dp"
+        android:text="회원가입"
+        android:textSize="5dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="296dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="458dp"
+        android:text="------------------------o r------------------------"
+        android:textAlignment="center"
+        android:textSize="14dp" />
+
+    <com.kakao.usermgmt.LoginButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="58dp"
+        android:layout_marginTop="508dp"
+        android:text="카카오톡 로그인"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="514dp"></com.kakao.usermgmt.LoginButton>
+
+    <ImageButton
+        android:id="@+id/button3"
+        android:layout_width="271dp"
+        android:layout_height="54dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="65dp"
+        android:layout_marginBottom="152dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/naver_login" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="275dp"
+        android:layout_height="71dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="70dp"
+        android:layout_marginBottom="44dp"
+        android:text="기본 계정 외에도 카카오등\n이용하여 로그인가능"
+        android:textSize="20dp" />
+</RelativeLayout>

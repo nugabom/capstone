@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/particle"
+        android:title="Particle"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/toggle"
+        android:title="Toggle"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/min_pq"
+        android:title="MinPQ"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/random"
+        android:title="Random"
+        app:showAsAction="ifRoom" />
+</menu>

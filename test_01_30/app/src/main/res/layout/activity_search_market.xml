@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".SelectMarketActivity"
+    android:orientation="vertical"
+    android:theme="@style/Theme.AppCompat.NoActionBar">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/toolbar">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_back"
+                android:layout_centerVertical="true"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_centerInParent="true"
+                android:text="포장/방문"
+                android:id="@+id/region"/>
+        </RelativeLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape"
+                android:orientation="horizontal"
+                android:clickable="true"
+                android:id="@+id/query1"
+                android:layout_margin="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="주문많은순으로선택"
+                    android:layout_gravity="center_vertical"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_region_dictator"
+                    android:layout_gravity="center_vertical"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape"
+                android:orientation="horizontal"
+                android:id="@+id/query2"
+                android:clickable="true"
+                android:layout_margin="10dp"
+                android:layout_toEndOf="@+id/query1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="별점"
+                    android:layout_gravity="center_vertical"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_region_dictator"
+                    android:layout_gravity="center_vertical"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape"
+                android:orientation="horizontal"
+                android:clickable="true"
+                android:id="@+id/query3"
+                android:layout_margin="10dp"
+                android:layout_toEndOf="@id/query2">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="기타"
+                    android:layout_gravity="center_vertical"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_region_dictator"
+                    android:layout_gravity="center_vertical"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape"
+                android:orientation="horizontal"
+                android:id="@+id/query4"
+                android:clickable="true"
+                android:layout_margin="10dp"
+                android:layout_toEndOf="@id/query3">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="주문 많은 순"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_region_dictator"/>
+            </LinearLayout>
+
+        </RelativeLayout>
+    </HorizontalScrollView>
+
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabGravity="fill"
+        app:tabMode="scrollable">
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/view_pagers"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>

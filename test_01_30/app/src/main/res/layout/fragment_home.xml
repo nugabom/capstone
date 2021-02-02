@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragment.HomeFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+<!--
+    상단 레이아웃
+!-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_notification"
+                android:layout_centerVertical="true"/>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_centerInParent="true"
+                android:text="서울 구로구 중앙로 37"
+                android:id="@+id/region"
+                android:textSize="18sp"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_region_dictator"
+                android:layout_centerInParent="true"
+                android:layout_toEndOf="@+id/region"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/ic_menu"/>
+        </RelativeLayout>
+
+<!--
+    banner Recycle view and
+!-->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:orientation="horizontal"
+                android:id="@+id/banner_recycler_view"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="10dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/shape">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2"
+                    android:layout_gravity="right"
+                    android:layout_marginHorizontal="3dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="/"
+                    android:layout_gravity="right"
+                    android:layout_marginHorizontal="3dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="15"
+                    android:layout_gravity="right"
+                    android:layout_marginHorizontal="3dp"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_add"
+                    android:layout_marginHorizontal="3dp"/>
+
+            </LinearLayout>
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:orientation="horizontal"
+            android:background="@drawable/shape">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_search"
+                android:layout_gravity="center_vertical"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="오늘 뭐 먹지"
+                android:textSize="10sp"
+                android:textColor="@color/white"
+                android:layout_marginStart="10dp"/>
+
+        </LinearLayout>
+
+<!--
+    menu view
+!-->
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/menu_type_recycler_view"/>
+<!--
+    menu hash tag
+!-->
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/menu_type_recycler_view"
+                android:id="@+id/hash_tag_menu_recycler_view"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+</FrameLayout>

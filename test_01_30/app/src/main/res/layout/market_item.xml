@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="15dp">
+
+<!--
+    market_id : TextView
+    market_image : ImageView
+    market_rating : TextView
+    market_review : TextView
+    market_reply : TextView
+
+!-->
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_market"
+        android:background="@color/white"
+        android:id="@+id/market_image"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_toEndOf="@+id/market_image"
+        android:padding="10dp"
+        android:layout_marginStart="10dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="자금성24시-강서점"
+            android:id="@+id/market_id"
+            android:textStyle="bold"
+            android:textSize="18dp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/market_id"
+            android:orientation="horizontal"
+            android:layout_marginVertical="5dp"
+            android:id="@+id/market_content_layout">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_rating"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/market_rating"
+                    android:text="4.4"
+                    android:textSize="15sp"
+                    android:layout_marginLeft="3dp"
+                    android:textStyle="bold"
+                    android:layout_gravity="center_vertical"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="·"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginHorizontal="3dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="리뷰"
+                    android:layout_gravity="center_vertical"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/market_review"
+                    android:text="129"
+                    android:textSize="15sp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_gravity="center_vertical"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="·"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginHorizontal="3dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="사장님댓글"
+                    android:layout_gravity="center_vertical"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/market_reply"
+                    android:text="129"
+                    android:textSize="15sp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_gravity="center_vertical"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/market_content_layout">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="배달요금"
+                android:id="@+id/pay"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/pay"
+                android:text="1000원"
+                android:layout_marginLeft="5dp"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginRight="51dp"
+                android:layout_marginBottom="0dp"
+                android:layout_toLeftOf="@+id/expected_time"
+                android:background="@color/background_color"
+                android:src="@drawable/ic_timer" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="1000"
+                android:id="@+id/expected_time"/>
+
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>
