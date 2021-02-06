@@ -27,12 +27,14 @@
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:text="사장님 로그인"
+            android:id="@+id/manufacturer_login"
             android:layout_margin="20dp"/>
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:text="손님 로그인"
+            android:id="@+id/user_login"
             android:layout_margin="20dp"/>
 
         <TextView

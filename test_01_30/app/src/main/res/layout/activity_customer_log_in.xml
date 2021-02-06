@@ -41,11 +41,13 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:id="@+id/email"
                     android:hint="아이디"/>
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="비밀번호"
+                    android:id="@+id/password"
                     android:layout_marginTop="10dp"/>
             </LinearLayout>
             <Button
@@ -53,6 +55,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="로그인"
+                android:id="@+id/btn_login"
                 android:textSize="25sp"
                 android:textStyle="bold">
 
@@ -70,18 +73,24 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:id="@+id/sign_up"
                 android:text="회원가입"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="아이디 찾기"
+                android:id="@+id/find_email"
+                android:textSize="12sp"
                 android:layout_marginStart="90dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="비밀번호 찾기"
+                android:id="@+id/find_password"
+                android:textSize="12sp"
                 android:layout_marginStart="75dp"/>
         </LinearLayout>
     </RelativeLayout>
@@ -97,21 +106,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:src="@mipmap/ic_launcher"
-            android:id="@+id/button1"
+            android:id="@+id/kakao_btn"
             android:layout_marginTop="10dp"/>
         <ImageButton
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@mipmap/ic_launcher"
-            android:id="@+id/button2"
-            android:layout_below="@+id/button1"
+            android:src="@drawable/common_google_signin_btn_icon_dark"
+            android:id="@+id/google_btn"
+            android:layout_below="@+id/kakao_btn"
             android:layout_marginTop="10dp"/>
 
         <ImageButton
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:src="@mipmap/ic_launcher"
-            android:layout_below="@+id/button2"
+            android:layout_below="@+id/google_btn"
             android:layout_marginTop="10dp"/>
     </RelativeLayout>
 
