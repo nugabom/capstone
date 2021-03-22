@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c09b7488-01e3-4126-88ab-1209fbf517a9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../MyApplication5/app/src/main/java/com/dsna19/myapplication/MaskApi.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../MyApplication5/app/src/main/java/com/dsna19/myapplication/Store.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../MyApplication5/app/src/main/java/com/dsna19/myapplication/instagram.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../MyApplication5/app/src/main/res/drawable/marker_gray.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../MyApplication5/app/src/main/res/drawable/marker_green.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../MyApplication5/app/src/main/res/drawable/marker_red.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../MyApplication5/app/src/main/res/drawable/marker_yellow.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../MyApplication5/app/src/main/res/layout/activity_instagram.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../MyApplication5/app/src/main/res/layout/info_window.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../test_01_30/app/src/main/java/com/dsna19/test_01_30/ConnectHashTag.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../test_01_30/app/src/main/java/com/dsna19/test_01_30/InstagramActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../test_01_30/app/src/main/java/com/dsna19/test_01_30/PayActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../test_01_30/app/src/main/res/layout/activity_connect_hash_tag.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../test_01_30/app/src/main/res/layout/activity_instagram.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../test_01_30/app/src/main/res/layout/activity_pay.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MyApplication3/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../MyApplication3/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MyApplication3/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../MyApplication3/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MyApplication3/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../MyApplication3/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MyApplication3/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../MyApplication3/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MyApplication3/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../MyApplication3/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MyApplication3/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../MyApplication3/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MyApplication3/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../MyApplication3/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MyApplication3/app/proguard-rules.pro" beforeDir="false" afterPath="$PROJECT_DIR$/../../MyApplication3/app/proguard-rules.pro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MyApplication3/app/src/androidTest/java/com/dsna19/myapplication/ExampleInstrumentedTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MyApplication3/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../MyApplication3/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MyApplication3/app/src/main/java/com/dsna19/myapplication/ItemAdapter.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MyApplication3/app/src/main/java/com/dsna19/myapplication/MainActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MyApplication3/app/src/main/java/com/dsna19/myapplication/item.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MyApplication3/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../MyApplication3/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MyApplication3/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../MyApplication3/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MyApplication3/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../MyApplication3/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MyApplication3/app/src/main/res/layout/item.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MyApplication3/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../MyApplication3/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MyApplication3/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../MyApplication3/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MyApplication3/app/src/main/res/values-night/themes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../MyApplication3/app/src/main/res/values-night/themes.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MyApplication3/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../MyApplication3/app/src/main/res/values/colors.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MyApplication3/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../MyApplication3/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MyApplication3/app/src/main/res/values/themes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../MyApplication3/app/src/main/res/values/themes.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MyApplication3/app/src/test/java/com/dsna19/myapplication/ExampleUnitTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MyApplication3/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../MyApplication3/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MyApplication3/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../MyApplication3/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MyApplication3/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../MyApplication3/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MyApplication3/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/../../MyApplication3/gradlew.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MyApplication3/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../MyApplication3/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../test_01_30/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../test_01_30/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../test_01_30/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../test_01_30/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../test_01_30/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../test_01_30/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../test_01_30/app/src/main/java/com/dsna19/test_01_30/Adapter/HashTagAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../test_01_30/app/src/main/java/com/dsna19/test_01_30/Adapter/HashTagAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../test_01_30/app/src/main/java/com/dsna19/test_01_30/CustomerLogInActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../test_01_30/app/src/main/java/com/dsna19/test_01_30/CustomerLogInActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../test_01_30/app/src/main/java/com/dsna19/test_01_30/FindEmail.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../test_01_30/app/src/main/java/com/dsna19/test_01_30/FindEmail.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../test_01_30/app/src/main/java/com/dsna19/test_01_30/FindPassword.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../test_01_30/app/src/main/java/com/dsna19/test_01_30/FindPassword.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../test_01_30/app/src/main/java/com/dsna19/test_01_30/Fragment/HomeFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../test_01_30/app/src/main/java/com/dsna19/test_01_30/Fragment/HomeFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../test_01_30/app/src/main/java/com/dsna19/test_01_30/MapActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../test_01_30/app/src/main/java/com/dsna19/test_01_30/MapActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../test_01_30/app/src/main/java/com/dsna19/test_01_30/RegisterActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../test_01_30/app/src/main/java/com/dsna19/test_01_30/RegisterActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../test_01_30/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../test_01_30/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../test_01_30/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../test_01_30/build.gradle" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1o4dqWTweE8KghoVsrClBLZtL0U" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="show.do.not.copy.http.proxy.settings.to.gradle" value="true" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c09b7488-01e3-4126-88ab-1209fbf517a9" name="Default Changelist" comment="" />
+      <created>1612549987974</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1612549987974</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2360" y="94" key="#Project_Structure" timestamp="1614857959100">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2360" y="94" key="#Project_Structure/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1614857959100" />
+  </component>
+</project>

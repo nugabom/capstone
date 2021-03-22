@@ -1,5 +1,6 @@
 package com.dsna19.test_01_30.Fragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -106,6 +107,7 @@ class HomeFragment : Fragment() {
                 HashTag("냉면"),
                 HashTag("쌀국수"),
         )
+
         hashTagAdapter = HashTagAdapter(context, hashTagList)
         hash_tag_menu_recycler_view.adapter = hashTagAdapter
         hashTagAdapter.notifyDataSetChanged()
@@ -127,5 +129,9 @@ class HomeFragment : Fragment() {
                 e.printStackTrace()
             }
         }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
     }
 }

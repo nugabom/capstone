@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.dsna19.myapplication">
-
-    <uses-permission android:name="android.permission.INTERNET"/>
+    package="com.example.myapplication">
 
     <application
         android:allowBackup="true"
@@ -10,15 +8,42 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
         android:theme="@style/Theme.MyApplication">
-        <activity android:name=".MainActivity">
+        <activity android:name=".bookActivity.PayActivity"></activity>
+        <activity android:name=".bookActivity.BookActivity" />
+        <activity android:name=".MapActivity" />
+        <activity android:name=".mainPage.Connect_hash_tag" />
+        <activity android:name=".start.StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".start.RegisterActivity" />
+        <activity android:name=".start.FindPassword" />
+        <activity android:name=".start.FindEmail" />
+        <activity android:name=".start.CustomerLogInActivity" />
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.MyApplication.NoActionBar" />
+        <activity android:name=".mainPage.Sikdang_main" />
+        <activity android:name=".mainPage.What_eat_today" />
+        <activity android:name=".addPage.Add_page" />
+        <activity android:name=".mainPage.SikdangList" />
+        <activity android:name=".sikdangChoicePage.SikdangChoice" />
+        <activity android:name=".bookTime.BookTime" />
+        <activity android:name=".payPage.PayPage" />
+
+        <meta-data
+            android:name="com.naver.maps.map.CLIENT_ID"
+            android:value="x806jwcpgr" />
     </application>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>
