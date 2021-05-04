@@ -22,6 +22,7 @@ class TableFloorFragment(val floor_name : String, val table_info : ArrayList<Tab
 {
     lateinit var floorText : TextView
     lateinit var floor_layout : ConstraintLayout
+    lateinit var floor_background : ImageView
     var tableSelectedByUser : HashMap<String, Table> = hashMapOf()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -29,7 +30,9 @@ class TableFloorFragment(val floor_name : String, val table_info : ArrayList<Tab
 
         floorText = view.findViewById(R.id.floorText)
         floorText.text = floor_name
+        floor_background = view.findViewById(R.id.floor_layout)
         floor_layout = view.findViewById(R.id.floorLayout)
+        floor_background.setImageResource(R.drawable.store_layout_example)
         val table_to_imageView = TableToImageView()
         for (table in table_info) {
             floor_layout.addView(table_to_imageView.build(table))

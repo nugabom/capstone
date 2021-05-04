@@ -16,6 +16,7 @@ class BookActivity : AppCompatActivity() {
     lateinit var sikdangImage : ImageView
     lateinit var tableMetaData : HashMap<String, HashMap<String, Table>>
     lateinit var menuList : ArrayList<MenuData>
+    lateinit var selected_time : String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

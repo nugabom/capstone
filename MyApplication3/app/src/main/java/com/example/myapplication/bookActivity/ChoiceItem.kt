@@ -1,9 +1,21 @@
 package com.example.myapplication.bookActivity
 
 import java.io.Serializable
+import java.lang.StringBuilder
 
 class ChoiceItem : Serializable{
     var choiced_Items : ArrayList<Item> = arrayListOf()
+
+    override fun toString(): String {
+        var sb = StringBuilder()
+        for (item in choiced_Items) {
+            sb.append("${item.product} : ${item.cnt} ,")
+        }
+        sb.deleteCharAt(sb.lastIndex)
+        sb.deleteCharAt(sb.lastIndex)
+
+        return sb.toString()
+    }
 
     fun addItem(product : String, price: Int){
         if(!product_exist(product))
@@ -55,7 +67,6 @@ class ChoiceItem : Serializable{
                 exist.cnt += item.cnt
             }
         }
-
         return this
     }
 

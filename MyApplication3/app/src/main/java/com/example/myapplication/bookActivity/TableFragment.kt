@@ -14,6 +14,10 @@ import androidx.fragment.app.FragmentManager
 import androidx.viewpager2.widget.ViewPager2
 import com.example.myapplication.R
 import com.google.android.material.tabs.TabLayout
+import java.util.*
+import kotlin.collections.ArrayList
+import kotlin.collections.HashMap
+import kotlin.concurrent.timer
 
 class TableFragment(val table_meta: HashMap<String, HashMap<String, Table>>,
                     val table_booked : HashMap<String, HashMap<String, Boolean>>,
@@ -29,7 +33,7 @@ class TableFragment(val table_meta: HashMap<String, HashMap<String, Table>>,
         var view = inflater.inflate(R.layout.booktable_fragment, container, false)
         // Log
         tableData = TableData(table_meta, table_booked, selected_time)
-
+        (requireActivity() as BookActivity).selected_time = selected_time
         for (floor_name in tableData.floor_list) {
             Log.d("TableFragment", "${tableData.current_table_list[floor_name]}")
         }

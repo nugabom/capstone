@@ -116,7 +116,7 @@ class MenuFragment (val selectedTables : HashMap<String, ArrayList<Table>>) : Fr
         baskets = hashMapOf()
         for (floor_name in selectedTables.keys) {
             for(table in selectedTables[floor_name]!!) {
-                baskets.put("${floor_name} ${table.id}", ChoiceItem())
+                baskets.put("${floor_name}:${table.id}", ChoiceItem())
             }
         }
 
@@ -153,6 +153,7 @@ class MenuFragment (val selectedTables : HashMap<String, ArrayList<Table>>) : Fr
         intent.putExtra("stocks", baskets)
         intent.putExtra("price", price)
         intent.putExtra("store_info", (requireActivity() as BookActivity).storeInfo)
+        intent.putExtra("bookTime", (requireActivity() as BookActivity).selected_time)
         startActivity(intent)
     }
 

@@ -16,13 +16,18 @@ import android.widget.Toast
 import androidx.annotation.UiThread
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.bookActivity.BookActivity
 
 import com.example.myapplication.dataclass.LocationWithID
+import com.example.myapplication.mainPage.CatorySetAdapter
 import com.example.myapplication.mainPage.Sikdang_main
 import com.google.firebase.database.*
 import com.naver.maps.geometry.LatLng
 import com.naver.maps.map.*
+import com.naver.maps.map.internal.resource.OverlayImageLoader
 import com.naver.maps.map.overlay.*
 import com.naver.maps.map.util.FusedLocationSource
 import kotlin.math.hypot
@@ -38,6 +43,7 @@ class MapActivity : AppCompatActivity(),
     lateinit var mNaverMap : NaverMap
     var markerList : ArrayList<Marker> = arrayListOf()
     var isCameraAnimated = false
+    var catory : String = "ALL"
     lateinit var lastLocation : LatLng
     lateinit var results : ArrayList<Store>
     lateinit var reference : DatabaseReference
@@ -47,6 +53,9 @@ class MapActivity : AppCompatActivity(),
 
     lateinit var text_range : EditText
     lateinit var search_btn : Button
+
+    lateinit var rv_catory : RecyclerView
+    lateinit var naviAdapter: NaviCatoryAdapter
 
     override fun onCameraChange(reason: Int, animated: Boolean) {
         isCameraAnimated = animated
@@ -67,13 +76,21 @@ class MapActivity : AppCompatActivity(),
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_map)
+
+        rv_catory = findViewById(R.id.rv_catory)
+        naviAdapter = NaviCatoryAdapter(this, this)
+        var linearLayoutManager = GridLayoutManager(this, 2)
+        linearLayoutManager.orientation = LinearLayoutManager.HORIZONTAL
+        rv_catory.layoutManager = linearLayoutManager
+        rv_catory.adapter = naviAdapter
+
         range = intent.extras!!.getInt("range")
         text_range = findViewById(R.id.text_range)
 
         search_btn = findViewById(R.id.search_btn)
 
-        reference = FirebaseDatabase.getInstance().getReference("Locations")
-                .child("닭고기")
+        reference = FirebaseDatabase.getInstance().getReference("NaviLocations")
+
         text_range.imeOptions = EditorInfo.IME_ACTION_DONE
         text_range.setOnEditorActionListener (object : TextView.OnEditorActionListener{
             override fun onEditorAction(v: TextView?, actionId: Int, event: KeyEvent?): Boolean {
@@ -99,6 +116,8 @@ class MapActivity : AppCompatActivity(),
     override fun onMapReady(naverMap: NaverMap) {
         // Naver Map 초기 세팅
         mNaverMap = naverMap
+        mNaverMap.maxZoom = 18.0
+        mNaverMap.minZoom = 15.0
         locationSource = FusedLocationSource(this, ACCESS_LOCATION_PERMISSION_REQUEST_CODE)
         lastLocation = mNaverMap.cameraPosition.target
         var uiSettings = mNaverMap.uiSettings
@@ -122,9 +141,6 @@ class MapActivity : AppCompatActivity(),
                 var view = View.inflate(this@MapActivity, R.layout.store_info, null)
                 view.findViewById<TextView>(R.id.store_id).text = "상호 : ${store.name}"
                 view.findViewById<TextView>(R.id.store_distance).text = "거리 : ${store.distance}m"
-                view.setOnClickListener {
-                    Toast.makeText(this@MapActivity, "내ㅐㅏ후ㅗ햐ㅐ", Toast.LENGTH_LONG).show()
-                }
                 return view
             }
         }
@@ -199,7 +215,8 @@ class MapActivity : AppCompatActivity(),
                 Log.d("onClick", "${(marker.tag as Store).name} is Double Clicked?")
                 val sikdangId = (marker.tag as Store).id
                 var intent = Intent(this, BookActivity::class.java)
-                BookActivityBuilder(sikdangId, "닭고기", this).build()
+                val result = BookActivityBuilder(sikdangId, "중식", this).build()
+                Log.d("Map clicked", "${result}")
                 infoWindow?.close()
             } else {
                 infoWindow!!.open(marker)
@@ -231,7 +248,8 @@ class MapActivity : AppCompatActivity(),
                     val dis = distance(location, LatLng(store_location!!.Lat!!, store_location!!.Lng!!))
                     if (dis < range) {
                         Log.d("store", store_location.toString())
-                        results.add(locationToStore(store_location, dis, locationDB.key.toString()))
+                        if (catory.compareTo(store_location.store_type!!) == 0 || catory.compareTo("ALL") == 0)
+                            results.add(locationToStore(store_location, dis))
                     }
                 }
                 updateMapMakers(results)
@@ -265,8 +283,8 @@ data class Store (
     val category: String) {
 }
 
-fun locationToStore(location: LocationWithID, distance: Int, category: String): Store {
+fun locationToStore(location: LocationWithID, distance: Int): Store {
     val i = occupies.size
     val rand = Random.nextInt(0, i)
-    return Store(location.id!!, location.name!!, LatLng(location.Lat!!, location.Lng!!), occupies[rand], distance, category)
+    return Store(location.id!!, location.name!!, LatLng(location.Lat!!, location.Lng!!), occupies[rand], distance, location.store_type!!)
 }

@@ -20,6 +20,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.ktx.Firebase
+import java.time.LocalDate
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import kotlin.math.floor
@@ -31,7 +32,7 @@ class TimeLineAdapter (var context: Context?,
 ) :RecyclerView.Adapter<TimeLineAdapter.ViewHolder>() {
     private val current_time = timeset()
     inner class ViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
-        lateinit var time : TextView
+        var time : TextView
         init {
             time = itemView.findViewById(R.id.time)
         }
@@ -43,10 +44,14 @@ class TimeLineAdapter (var context: Context?,
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.time.text = bookTime.time_list[position]
-        if("5:00 오후".compareTo(holder.time.text.toString(), false) > 0) {
+        val time = bookTime.time_list[position]
+        holder.time.text = time
+
+        if(compareTime(current_time, time)) {
+            Log.d("timeset", "${current_time} > ${holder.time.text}")
             notifyInvalid(holder)
         }
+
         else if(bookTime.book_check_list[bookTime.time_list.indexOf(holder.time.text.toString())]) {
             notifyInvalid(holder)
         }
@@ -63,7 +68,7 @@ class TimeLineAdapter (var context: Context?,
 
     private fun timeset():String {
         val now = LocalDateTime.now()
-        val timeFormatter = DateTimeFormatter.ofPattern("h:mm a")
+        val timeFormatter = DateTimeFormatter.ofPattern(":mm a")
         var current = now.format(timeFormatter)
         Log.d("timeset", current)
 
@@ -102,7 +107,7 @@ class TimeLineAdapter (var context: Context?,
         var floor_map= hashMapOf<String, HashMap<String, Boolean>>()
         Log.d("getTable", "${snapshot}")
         for (floor in snapshot.children) {
-            Log.d("getTable", "시바바바${floor.toString()}")
+            Log.d("getTable", "${floor.toString()}")
             Log.d("getTable", floor.child(time).key.toString())
 
             val floor_name = floor.key.toString()
@@ -132,6 +137,24 @@ class TimeLineAdapter (var context: Context?,
                 .replace(R.id.bookFragment, TableFragment(activity.tableMetaData, floor_map, time))
                 .commit()
         return true
+    }
+
+    fun compareTime(current_time : String, table_time : String) : Boolean{
+        var current = current_time
+        if(current_time.length == 6) {
+            current = "00" + current
+        }
+
+        var table = table_time
+        if(table_time.substring(0, 2).compareTo("12") == 0) {
+            table = "00" + table.substring(2)
+        }
+        Log.d("compareTime", "${current_time.length}")
+        Log.d("compareTime", "${table}")
+        Log.d("compareTime", "${current}, ${table}")
+
+        if(current.takeLast(1).compareTo(table.takeLast(1)) > 0) return true
+        return current.compareTo(table, false) >= 0
     }
 }
 

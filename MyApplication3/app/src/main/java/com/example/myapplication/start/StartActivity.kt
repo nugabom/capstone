@@ -6,6 +6,7 @@ import com.example.myapplication.R
 import android.content.Intent
 import android.widget.Button
 import android.widget.Toast
+import com.example.myapplication.mainPage.MainActivity
 import com.example.myapplication.mainPage.Sikdang_main
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -43,7 +44,7 @@ class StartActivity : AppCompatActivity() {
         // reference.childExists(firebaseUser) -> Main
 
         if(firebaseUser != null) {
-            startActivity(Intent(this, Sikdang_main::class.java))
+            startActivity(Intent(this, MainActivity::class.java))
             finish()
         }
     }

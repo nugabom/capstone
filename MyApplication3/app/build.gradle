@@ -6,12 +6,11 @@ plugins {
 }
 
 android {
-    compileSdkVersion 30
-
+    compileSdkVersion 29
     defaultConfig {
         applicationId "com.example.myapplication"
-        minSdkVersion 27
-        targetSdkVersion 30
+        minSdkVersion 29
+        targetSdkVersion 29
         versionCode 1
         versionName "1.0"
 
@@ -69,6 +68,7 @@ dependencies {
     implementation 'com.google.android.gms:play-services-auth:19.0.0'
 
     // Kakao Login Service
+    implementation 'com.android.volley:volley:1.1.1'
     implementation "io.reactivex.rxjava2:rxjava:2.2.17"
     implementation "com.squareup.retrofit2:converter-gson:2.7.1"
     implementation "com.squareup.retrofit2:retrofit:2.7.1"
@@ -76,9 +76,16 @@ dependencies {
     implementation "com.squareup.okhttp3:logging-interceptor:4.3.1"
     implementation "org.koin:koin-androidx-scope:2.0.1"
     implementation "org.koin:koin-androidx-viewmodel:2.0.1"
+    implementation "com.kakao.sdk:v2-user:2.5.0"
 
     // Naver map
     implementation 'com.naver.maps:map-sdk:3.10.0'
     implementation 'com.naver.maps:map-sdk:3.10.2'
     implementation 'com.google.android.gms:play-services-location:17.0.0'
+
+    //Glide
+    implementation "com.github.bumptech.glide:glide:4.8.0"
+
+    //Cropper
+    implementation 'com.theartofdev.edmodo:android-image-cropper:2.8.+'
 }

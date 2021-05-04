@@ -1,27 +1,35 @@
 package com.example.myapplication.start
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import com.example.myapplication.R
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
+import android.os.Bundle
 import android.text.TextUtils
 import android.util.Base64
 import android.util.Log
 import android.widget.*
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
+import com.android.volley.Request
+import com.android.volley.Response
+import com.android.volley.VolleyError
+import com.android.volley.toolbox.JsonObjectRequest
+import com.android.volley.toolbox.Volley
+import com.example.myapplication.R
+import com.example.myapplication.mainPage.MainActivity
 import com.example.myapplication.mainPage.Sikdang_main
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
+import com.google.android.gms.tasks.Task
+import com.google.android.gms.tasks.TaskCompletionSource
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.database.*
-import java.security.MessageDigest
+
 /*
     phone_number : 구글계정에 없으면 못씀
  */
@@ -58,9 +66,6 @@ class CustomerLogInActivity : AppCompatActivity() {
         findPassword = findViewById(R.id.find_password)
         findEmail = findViewById(R.id.find_email)
 
-        getKeyHashBase64(this)
-
-
         google_login.setOnClickListener {
             setGoogleLogin()
             SignIn()
@@ -96,7 +101,10 @@ class CustomerLogInActivity : AppCompatActivity() {
 
                         val loginEventListener = object : ValueEventListener {
                             override fun onDataChange(snapshot: DataSnapshot) {
-                                var intent = Intent(this@CustomerLogInActivity, Sikdang_main::class.java)
+                                var intent = Intent(
+                                    this@CustomerLogInActivity,
+                                    MainActivity::class.java
+                                )
                                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
                                 startActivity(intent)
                                 finish()
@@ -142,7 +150,7 @@ class CustomerLogInActivity : AppCompatActivity() {
                 var account = task.getResult(ApiException::class.java)
                 firebaseAuthWithGoogle(account)
             }
-            catch (e : ApiException) {
+            catch (e: ApiException) {
                 Toast.makeText(this, "google login 실패", Toast.LENGTH_SHORT).show()
             }
         }
@@ -155,26 +163,31 @@ class CustomerLogInActivity : AppCompatActivity() {
                 if (task.isSuccessful) {
                     updateSignIn(auth)
                     Toast.makeText(this, "Google Login 성공", Toast.LENGTH_SHORT).show()
-                    startActivity(Intent(this, Sikdang_main::class.java))
+                    startActivity(Intent(this, MainActivity::class.java))
                     finish()
                 } else {
                     Toast.makeText(this, "Google Login 실패", Toast.LENGTH_SHORT).show()
                 }
             }
     }
-
+/*
     @RequiresApi(Build.VERSION_CODES.P)
-    private fun getKeyHashBase64(context : Context) {
-        val info = packageManager.getPackageInfo(packageName, PackageManager.GET_SIGNING_CERTIFICATES)
+    private fun getKeyHashBase64(context: Context) {
+        val info = packageManager.getPackageInfo(
+            packageName,
+            PackageManager.GET_SIGNING_CERTIFICATES
+        )
         val signatures = info.signingInfo.apkContentsSigners
         val md = MessageDigest.getInstance("SHA")
         for (signature in signatures) {
             val md = MessageDigest.getInstance("SHA")
             md.update(signature.toByteArray())
-            val key = String(Base64.encode(md.digest() , 0))
+            val key = String(Base64.encode(md.digest(), 0))
             Log.d("hash key", key.toString())
         }
     }
+
+ */
 
     private fun updateSignIn(firebaseAuth: FirebaseAuth) {
         val userid = firebaseAuth.currentUser!!.uid

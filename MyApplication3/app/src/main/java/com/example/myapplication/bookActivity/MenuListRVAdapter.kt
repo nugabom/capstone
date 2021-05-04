@@ -9,6 +9,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.view.menu.ActionMenuItemView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.myapplication.R
 
 class MenuListRVAdapter (
@@ -24,7 +25,7 @@ class MenuListRVAdapter (
     override fun onBindViewHolder(holder: Holder, position: Int) {
         val stock = menu_list[position]
 
-        holder.menuImage.setBackgroundResource(R.drawable.food_placeholder)
+        Glide.with(context).load(stock.first.image_url).into(holder.menuImage)
         holder.menuName.text = stock.first.product
         holder.menuPrice.text = stock.first.price.toString()
         holder.menuExp.text = "${stock.first.product_exp} 원"

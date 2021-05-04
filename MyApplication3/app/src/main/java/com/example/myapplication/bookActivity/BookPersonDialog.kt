@@ -2,7 +2,6 @@ package com.example.myapplication.bookActivity
 
 import android.app.Dialog
 import android.content.Context
-import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -10,8 +9,6 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
-import com.google.android.material.tabs.TabLayout
-import okhttp3.internal.notify
 
 class BookPersonDialog (
         context: Context,

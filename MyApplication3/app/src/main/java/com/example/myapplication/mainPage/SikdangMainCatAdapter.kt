@@ -53,7 +53,6 @@ class SikdangMainCatAdapter(var context: Context, val catArrayList: ArrayList<St
                 //intent.putExtra("pos", 1)
                 //var a = catButtonUp.getTag()
                 intent.putExtra("cat", item1)
-                intent.putExtra("catArrayList", catArrayList)
                 var dist = 0
                 if (distText.getText().toString().length == 0 ){
                     dist = 0

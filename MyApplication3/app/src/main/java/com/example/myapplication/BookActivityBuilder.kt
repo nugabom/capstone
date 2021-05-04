@@ -30,9 +30,9 @@ class BookActivityBuilder(val sikdangId : String, val category: String, var cont
         StoreInfoReference.addListenerForSingleValueEvent(object : ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
                 val done1 = getStoreInfo(snapshot)
-                if(!done1) return
+                if(!done1) {Log.d("getStoreInfo", "1fail"); return}
                 val done2 = getMenu(snapshot)
-                if(!done2) return
+                if(!done2){Log.d("getMenu", "2fail"); return}
 
                 var TableInfo = FirebaseDatabase.getInstance().getReference("Tables")
                         .child(sikdangId)
@@ -96,7 +96,7 @@ class BookActivityBuilder(val sikdangId : String, val category: String, var cont
         val timeMap = hashMapOf<String, Boolean>()
         for (floor in booktime_snapshot.children) {
             for (time in floor.children) {
-                val occupy = time.getValue(IsFull::class.java) ?: return false
+                val occupy = time.child("BookInfo").getValue(IsFull::class.java) ?: return false
                 val time_name = time.key.toString()
                 if(occupy.current == 0) {
                     timeMap.put(time_name, true)
@@ -106,7 +106,7 @@ class BookActivityBuilder(val sikdangId : String, val category: String, var cont
             }
         }
         time_list = ArrayList(timeMap.keys)
-        time_list = ArrayList(time_list.sortedWith(compareBy ({ it.contains("pm") }, {it})))
+        time_list = ArrayList(time_list.sortedWith(compareBy ({ it.contains("오후") }, {it})))
         book_check_list = arrayListOf()
         for (book_status in time_list) {
             book_check_list.add(timeMap[book_status]!!)
@@ -114,7 +114,7 @@ class BookActivityBuilder(val sikdangId : String, val category: String, var cont
 
         Log.d("bookActivityBuilder", "${storeInfo}")
         for (menu in menus) {
-            Log.d("bookActivityBuilder", "${menu.product} : ${menu.price}, ${menu.product_exp}, ${menu.ingredients}")
+            Log.d("bookActivityBuilder", "${menu.product} : ${menu.image_url} , ${menu.price}, ${menu.product_exp}, ${menu.ingredients}")
         }
 
         Log.d("bookActivityBuilder", "${time_list}")
@@ -145,6 +145,7 @@ class BookActivityBuilder(val sikdangId : String, val category: String, var cont
 
 @IgnoreExtraProperties
 data class _Menu(
+        val image : String? = null,
         val product : String? = null,
         val price : Int? = null,
         val product_exp : String? = null

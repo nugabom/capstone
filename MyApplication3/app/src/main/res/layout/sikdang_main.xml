@@ -160,13 +160,31 @@
 
             <!--먹고싶은 태그 선택지
             RecyclerView 로 접기 펼치기 가능하게 만듦-->
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/main_tagList"
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/plus_tag"
+                android:layout_marginTop="20dp"
+                android:layout_width="344dp"
                 android:layout_height="wrap_content"
+                android:text="플러스태그+"
+                android:textSize="20sp"
+                android:layout_gravity="center_horizontal"
+                android:paddingHorizontal="10dp"
+                android:gravity="center_horizontal"
+                android:background="#8200FF"/>
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_marginTop="10dp"
+                android:id="@+id/hash_line"
+                android:layout_width="344dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_horizontal"/>
 
-                />
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_marginTop="10dp"
+                android:id="@+id/main_tagList"
+                android:layout_width="344dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_height="wrap_content"/>
 
 
 
