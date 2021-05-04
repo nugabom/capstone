@@ -27,12 +27,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="요청사항"
+                android:textStyle="bold"
                 android:textSize="18sp" />
 
             <EditText
                 android:id="@+id/reqEditText"
                 android:layout_width="match_parent"
-                android:layout_height="135dp"
+                android:layout_height="120dp"
                 android:background="@null"
                 android:ems="10"
                 android:inputType="textPersonName"

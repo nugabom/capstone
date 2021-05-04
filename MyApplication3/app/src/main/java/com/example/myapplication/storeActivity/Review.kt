@@ -8,6 +8,7 @@ data class Review(
     val date : String? = null,
     val image : String? = null,
     val comment : String? = null,
+    val rating : Int? = null,
     val recomment : String? = null
 )
 

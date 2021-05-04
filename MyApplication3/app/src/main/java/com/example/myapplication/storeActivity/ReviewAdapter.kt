@@ -18,6 +18,17 @@ class ReviewAdapter(
     var review_list : ArrayList<Review>
 ) : RecyclerView.Adapter<ReviewAdapter.Holder>()
 {
+    companion object {
+        val USER_RATING_IMAGES = arrayListOf(
+                R.drawable.rating_bad,
+                R.drawable.rating_bad,
+                R.drawable.rating_soso,
+                R.drawable.rating_soso,
+                R.drawable.rating_good,
+                R.drawable.rating_good
+        )
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ReviewAdapter.Holder {
         val view = LayoutInflater.from(context).inflate(R.layout.review_item, parent, false)
         return Holder(view)
@@ -27,7 +38,7 @@ class ReviewAdapter(
         val review = review_list[position]
 
         holder.user_name.text = review.user_name
-        // holder.rating_star changed
+        holder.rating_star.setImageResource(USER_RATING_IMAGES[review.rating!!])
         holder.date.text = review.date
         if(review.image!!.compareTo("NULL") != 0) {
             holder.review_image.visibility = View.VISIBLE

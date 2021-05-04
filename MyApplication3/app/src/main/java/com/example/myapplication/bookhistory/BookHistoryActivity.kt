@@ -39,7 +39,6 @@ class BookHistoryActivity : AppCompatActivity() {
     private fun getFromDB() {
         FirebaseDatabase.getInstance().getReference("Reservations")
                 .child(user_id)
-                .orderByKey()
                 .addValueEventListener(object : ValueEventListener {
                     override fun onDataChange(snapshot: DataSnapshot) {
                         bookHistoryList.clear()
@@ -66,6 +65,7 @@ class BookHistoryActivity : AppCompatActivity() {
                                 Log.d("getFromDB", "${user_id} : ${data}")
                                 bookHistoryList.add(data)
                             }
+                            bookHistoryList.sortBy { it.date }
                             bookHistoryList.reverse()
                             bookHistoryAdapter.notifyDataSetChanged()
                         }

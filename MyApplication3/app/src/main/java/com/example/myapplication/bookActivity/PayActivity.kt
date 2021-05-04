@@ -6,6 +6,7 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.text.TextUtils
 import android.util.Log
 import android.widget.Button
 import android.widget.RadioGroup
@@ -349,6 +350,8 @@ class PayActivity : AppCompatActivity() {
 
                         reservate()
                         val _intent = Intent(this@PayActivity, PayComplete::class.java)
+                        _intent.putExtra("request", requset.text.toString())
+                        _intent.putExtra("stocks", stocks)
                         startActivity(_intent)
                         return Transaction.success(currentData)
                     }
@@ -372,6 +375,9 @@ class PayActivity : AppCompatActivity() {
     private fun reservate() {
         val current_date = LocalDate.now().format(DateTimeFormatter.ISO_DATE)
         val pay_time = SimpleDateFormat("HH:mm a", Locale.KOREA).format(Calendar.getInstance().time)
+        var request = requset.text.toString()
+
+        if(TextUtils.isEmpty(request)) request == "NULL"
 
         var reservation = hashMapOf<String, Any>(
             "userId" to firebaseUser.uid,
@@ -398,6 +404,8 @@ class PayActivity : AppCompatActivity() {
             .setValue(reservation)
 
         // Reservation for Sikdang
+        reservation.put("request", request)
+
         FirebaseDatabase.getInstance().getReference()
             .child("Reservations")
             .child(storeInfo.store_id!!)

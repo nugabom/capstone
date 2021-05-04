@@ -14,11 +14,24 @@ import com.example.myapplication.dataclass.StoreInfo
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.google.firebase.ktx.Firebase
+import kotlin.math.round
 
 class StoreActivity : AppCompatActivity() {
+    companion object {
+        val ratingBar = arrayListOf(
+                R.drawable.icon_rating_0,
+                R.drawable.icon_rating_1,
+                R.drawable.icon_rating_2,
+                R.drawable.icon_rating_3,
+                R.drawable.icon_rating_4,
+                R.drawable.icon_rating_5
+        )
+    }
+
     lateinit var store_image : ImageView
     lateinit var store_name : TextView
     lateinit var rating : TextView
+    lateinit var rating_star : ImageView
     lateinit var phone_number : TextView
     lateinit var bookmark_number : TextView
     lateinit var user_review : TextView
@@ -58,6 +71,7 @@ class StoreActivity : AppCompatActivity() {
         store_name.text = store_info.store_name
 
         rating = findViewById(R.id.rating)
+        rating_star = findViewById(R.id.rating_star)
 
         phone_number = findViewById(R.id.phone_number)
         phone_number.text = store_info.phone_number
@@ -110,6 +124,10 @@ class StoreActivity : AppCompatActivity() {
                     val total_rate = data.rating!!.toFloat()
                     val rate = total_rate / data.cnt_user!!
                     rating.text = "%.1f".format(rate)
+
+                    rating_star.setImageResource(ratingBar[round(rate).toInt()])
+
+
                 }
 
                 override fun onCancelled(error: DatabaseError) {

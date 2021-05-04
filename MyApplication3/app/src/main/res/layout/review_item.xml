@@ -18,10 +18,10 @@
             <TextView
                 android:id="@+id/user_name"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:text="유저이름"
                 android:textSize="20dp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -38,7 +38,7 @@
 
             <ImageView
                 android:id="@+id/rating_star"
-                android:layout_width="100dp"
+                android:layout_width="50dp"
                 android:layout_height="25dp"
                 android:src="@drawable/ratingstar"/>
 

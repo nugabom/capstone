@@ -47,13 +47,13 @@
                         android:layout_width="100dp"
                         android:layout_height="30dp"
                         android:layout_centerHorizontal="true"
-                        android:src="@drawable/ratingstar"/>
+                        android:src="@drawable/icon_rating_5"/>
 
                     <TextView
                         android:id="@+id/rating"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="4.3"
+                        android:text="5.0"
                         android:textStyle="bold"
                         android:textSize="20sp"
                         android:layout_centerVertical="true"

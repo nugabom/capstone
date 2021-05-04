@@ -84,7 +84,7 @@
 
             <ImageView
                 android:id="@+id/write_review"
-                android:src="@drawable/from_camera"
+                android:src="@drawable/icon_write_review"
                 android:layout_width="0dp"
                 android:layout_marginHorizontal="20dp"
                 android:layout_weight="1"
@@ -93,7 +93,7 @@
             <ImageView
                 android:id="@+id/view_store"
                 android:layout_marginHorizontal="20dp"
-                android:src="@drawable/food_placeholder"
+                android:src="@drawable/icon_view_store"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="match_parent"/>
@@ -101,7 +101,7 @@
             <ImageView
                 android:layout_marginHorizontal="20dp"
                 android:id="@+id/view_detail_payment"
-                android:src="@drawable/from_folder"
+                android:src="@drawable/icon_view_payment"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="match_parent"/>

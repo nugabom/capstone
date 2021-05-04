@@ -38,7 +38,7 @@ class BookMarkAdapter (
                     if(rate == null) return
                     holder.cnt_review.text = rate.cnt_user.toString()
                     val rating = rate.rating!!.toFloat() / rate.cnt_user!!
-                    holder.rating.text = rating.toString()
+                    holder.rating.text = "%.2f".format(rating)
                 }
 
                 override fun onCancelled(error: DatabaseError) {
